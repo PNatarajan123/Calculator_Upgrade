@@ -94,7 +94,7 @@ public class CalculatorUI extends JFrame {
 	 * Create the frame.
 	 */
 	public CalculatorUI() {
-		getContentPane().setBackground(new Color(175, 238, 238));
+		getContentPane().setBackground(new Color(123, 65, 65));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 418, 315);
 		getContentPane().setLayout(null);
@@ -315,6 +315,50 @@ public class CalculatorUI extends JFrame {
 		button_plus.setBackground(Color.PINK);
 		button_plus.setBounds(327, 138, 75, 40);
 		getContentPane().add(button_plus);
+
+		JButton button_multiply = new JButton("x");
+		button_multiply.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				button_multiply.setBackground(Color.WHITE);
+			}
+
+			public void mouseReleased(MouseEvent e) {
+				button_multiply.setBackground(Color.PINK);
+			}
+		});
+		button_multiply.addActionListener(e -> {
+			saveValueOfArg1();
+			saveValueOfMathOp(OPERATOR.MULTIPLY);
+		});
+		button_multiply.setOpaque(true);
+		button_multiply.setForeground(Color.WHITE);
+		button_multiply.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
+		button_multiply.setBackground(Color.PINK);
+		button_multiply.setBounds(327, 242, 75, 40);
+		getContentPane().add(button_multiply);
+
+		JButton button_divide = new JButton("/");
+		button_divide.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				button_divide.setBackground(Color.WHITE);
+			}
+
+			public void mouseReleased(MouseEvent e) {
+				button_divide.setBackground(Color.PINK);
+			}
+		});
+		button_divide.addActionListener(e -> {
+			saveValueOfArg1();
+			saveValueOfMathOp(OPERATOR.DIVIDE);
+		});
+		button_divide.setOpaque(true);
+		button_divide.setForeground(Color.WHITE);
+		button_divide.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
+		button_divide.setBackground(Color.PINK);
+		button_divide.setBounds(327, 294, 75, 40);
+		getContentPane().add(button_divide);
 		
 		JButton button_minus = new JButton("-");
 		button_minus.addMouseListener(new MouseAdapter() {
@@ -357,7 +401,7 @@ public class CalculatorUI extends JFrame {
 		button_equals.setForeground(Color.WHITE);
 		button_equals.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
 		button_equals.setBackground(Color.PINK);
-		button_equals.setBounds(327, 242, 75, 40);
+		button_equals.setBounds(327, 346, 75, 40);
 		getContentPane().add(button_equals);
 		
 		JButton button_clear = new JButton("AC");
@@ -375,7 +419,7 @@ public class CalculatorUI extends JFrame {
 		button_clear.setOpaque(true);
 		button_clear.setForeground(Color.BLACK);
 		button_clear.setBorder(new MatteBorder(4, 4, 4, 4, Color.WHITE));
-		button_clear.setBackground(new Color(221, 160, 221));
+		button_clear.setBackground(new Color(74, 127, 232));
 		button_clear.setBounds(327, 85, 75, 40);
 		getContentPane().add(button_clear);
 		
