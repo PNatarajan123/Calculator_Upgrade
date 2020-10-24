@@ -7,3 +7,4 @@ Arnav- 4/5: I gave myself a 4/5 because I was able to study a decent amount of c
 
 14/15 was the score we gave ourselves. The reason for us giving ourselves this score is that we were not able to work on effectively making many changes to the calculator.
 
+MVC or Model View Control: Model
