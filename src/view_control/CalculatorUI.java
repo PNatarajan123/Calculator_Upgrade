@@ -49,7 +49,13 @@ public class CalculatorUI extends JFrame {
 	    mathState = STATE.CALC;
 		initialCalcAreaInputState = true;
 	}
-	
+
+	private void square() {
+		this.arg1 = Double.parseDouble(this.calcArea.getText());
+		this.mathState = CalculatorUI.STATE.CALC;
+		this.initialCalcAreaInputState = true;
+	}
+
 	private void updateCalcArea(String string) {
 		if (initialCalcAreaInputState) {  // sets text to string on initial key typed
 			calcArea.setText(string);
@@ -381,7 +387,53 @@ public class CalculatorUI extends JFrame {
 		button_minus.setBackground(Color.PINK);
 		button_minus.setBounds(327, 190, 75, 40);
 		getContentPane().add(button_minus);
-		
+
+
+		final JButton button_sin = new JButton("sin");
+		button_sin.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				button_sin.setBackground(Color.ORANGE);
+			}
+
+			public void mouseReleased(MouseEvent e) {
+				button_sin.setBackground(Color.ORANGE);
+			}
+		});
+		button_sin.addActionListener((e) -> {
+			this.square();
+			this.saveValueOfMathOp(OPERATOR.SIN);
+		});
+		button_sin.setOpaque(true);
+		button_sin.setForeground(Color.BLACK);
+		button_sin.setBorder(new MatteBorder(4, 4, 4, 4, Color.BLACK));
+		button_sin.setBackground(Color.ORANGE);
+		button_sin.setBounds(501, 86, 75, 40);
+		this.getContentPane().add(button_sin);
+
+
+		final JButton button_cos = new JButton("cos");
+		button_cos.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				button_cos.setBackground(Color.ORANGE);
+			}
+
+			public void mouseReleased(MouseEvent e) {
+				button_cos.setBackground(Color.ORANGE);
+			}
+		});
+		button_cos.addActionListener((e) -> {
+			this.square();
+			this.saveValueOfMathOp(OPERATOR.COS);
+		});
+		button_cos.setOpaque(true);
+		button_cos.setForeground(Color.BLACK);
+		button_cos.setBorder(new MatteBorder(4, 4, 4, 4, Color.BLACK));
+		button_cos.setBackground(Color.ORANGE);
+		button_cos.setBounds(501, 138, 75, 40);
+		this.getContentPane().add(button_cos);
+
+
+
 		JButton button_equals = new JButton("=");
 		button_equals.addMouseListener(new MouseAdapter() {
 			@Override
